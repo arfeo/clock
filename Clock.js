@@ -17,12 +17,6 @@ class Clock {
   }
 
   render() {
-    this.createDOMElements();
-    this.renderFace();
-    this.renderHands();
-  }
-
-  createDOMElements() {
     const root = document.getElementById('root');
     const container = document.createElement('div');
 
@@ -37,6 +31,9 @@ class Clock {
     root.appendChild(container);
     container.appendChild(this.faceCanvas);
     container.appendChild(this.handsCanvas);
+
+    this.renderFace();
+    this.renderHands();
   }
 
   renderFace() {
