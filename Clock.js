@@ -166,6 +166,8 @@ class Clock {
     const animate = (time) => {
       if (time - start >= 1000) {
         this.renderHands();
+
+        start = time;
       }
 
       requestAnimationFrame(animate);
