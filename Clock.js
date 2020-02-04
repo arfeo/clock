@@ -63,6 +63,10 @@ class Clock {
 
     // Render minutes
     for (let i = 0; i < 60; i += 1) {
+      if (i % 5 === 0) {
+        continue;
+      }
+
       drawLineToAngle(
         ctx,
         this.canvasSize / 2 + (this.canvasSize / 2 - this.canvasSize / 15) * Math.cos(Math.PI * i / 30),
@@ -87,7 +91,7 @@ class Clock {
         ctx,
         this.canvasSize / 2 + strokeOuterRadius * Math.cos(strokeRotateAngle),
         this.canvasSize / 2 + strokeOuterRadius * Math.sin(strokeRotateAngle),
-        this.canvasSize / 30,
+        this.canvasSize / 15,
         i * 30,
         {
           edgingColor: BLACK_COLOR,
