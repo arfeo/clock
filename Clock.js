@@ -95,7 +95,7 @@ class Clock {
         i * 30,
         {
           edgingColor: BLACK_COLOR,
-          edgingWidth,
+          edgingWidth: edgingWidth * 1.6,
         }
       );
 
