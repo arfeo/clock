@@ -64,10 +64,13 @@ class Clock {
         continue;
       }
 
+      const strokeRotateAngle = Math.PI * i / 30;
+      const strokeOuterRadius = this.canvasSize / 2 - this.canvasSize / 15;
+
       drawLineToAngle(
         ctx,
-        this.canvasSize / 2 + (this.canvasSize / 2 - this.canvasSize / 15) * Math.cos(Math.PI * i / 30),
-        this.canvasSize / 2 + (this.canvasSize / 2 - this.canvasSize / 15) * Math.sin(Math.PI * i / 30),
+        this.canvasSize / 2 + (strokeOuterRadius) * Math.cos(strokeRotateAngle),
+        this.canvasSize / 2 + (strokeOuterRadius) * Math.sin(strokeRotateAngle),
         this.canvasSize / 30,
         i * 6,
         {
